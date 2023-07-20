@@ -29,7 +29,7 @@ export class App extends Component {
     const { good, neutral, bad } = this.state;
     return good + neutral + bad;
   };
-  ц;
+
   countPositiveFeedbackPercentage = () => {
     const { good } = this.state;
     const total = this.countTotalFeedback();
