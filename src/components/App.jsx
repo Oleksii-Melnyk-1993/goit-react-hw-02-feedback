@@ -45,7 +45,7 @@ export class App extends Component {
       <div className={css.wrapper}>
         <Section title="Please, leave your feedback">
           <FeedbackOptions
-            options={this.options}
+            options={options}
             onLeaveFeedback={this.onBtnClicked}
             iconBtn={this.iconBtn}
           />
