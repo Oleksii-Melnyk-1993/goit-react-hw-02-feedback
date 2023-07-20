@@ -3,6 +3,10 @@ import css from './App.module.css';
 import { FcCancel } from 'react-icons/fc';
 import { FcCheckmark } from 'react-icons/fc';
 import { FcDisplay } from 'react-icons/fc';
+import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
+import { Section } from './Section/Section';
+import { Statistics } from './Statistics/Statistics';
+import { Notification } from './Notification/Notification';
 
 export class App extends Component {
   state = {
@@ -12,9 +16,9 @@ export class App extends Component {
   };
 
   iconBtn = {
-    good: <FcCheckmark />,
-    neutral: <FcDisplay />,
-    bad: <FcDisplay />,
+    good: <FcCheckmark size="30px" className={css.icon_good} />,
+    neutral: <FcDisplay size="30px" />,
+    bad: <FcCancel size="30px" className={css.icon_bad} />,
   };
 
   onBtnClicked = option =>
@@ -38,8 +42,27 @@ export class App extends Component {
     const positivePercentage = this.countPositiveFeedbackPercentage();
     const options = Object.keys(this.state);
     return (
-      <div>
-        <Section title="Please, leave your feedback"></Section>
+      <div className={css.wrapper}>
+        <Section title="Please, leave your feedback">
+          <FeedbackOptions
+            options={this.options}
+            onLeaveFeedback={this.onBtnClicked}
+            iconBtn={this.iconBtn}
+          />
+        </Section>
+        <Section title="Statistics">
+          {total ? (
+            <Statistics
+              good={good}
+              neutral={neutral}
+              bad={bad}
+              total={total}
+              positivePercentage={positivePercentage}
+            />
+          ) : (
+            <Notification message="There is no feedback" />
+          )}
+        </Section>
       </div>
     );
   }
