@@ -3,6 +3,7 @@ import css from './App.module.css';
 import { FcCancel } from 'react-icons/fc';
 import { FcCheckmark } from 'react-icons/fc';
 import { FcDisplay } from 'react-icons/fc';
+
 import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
 import { Section } from './Section/Section';
 import { Statistics } from './Statistics/Statistics';
@@ -32,7 +33,7 @@ export class App extends Component {
   countPositiveFeedbackPercentage = () => {
     const { good } = this.state;
     const total = this.countTotalFeedback();
-    const positivePercentage = Math.round((total / good) * 100);
+    const positivePercentage = Math.round((good / total) * 100);
     return total ? positivePercentage : 0;
   };
 

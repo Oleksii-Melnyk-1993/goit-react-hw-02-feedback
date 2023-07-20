@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-export const FeedbackOptions = ({ options, onLeaveFeedBack, iconBtn }) => {
+export const FeedbackOptions = ({ options, onLeaveFeedback, iconBtn }) => {
   return (
     <div>
       {options.map(option => {
@@ -9,7 +9,7 @@ export const FeedbackOptions = ({ options, onLeaveFeedBack, iconBtn }) => {
             type="button"
             key={option}
             name={option}
-            onClick={() => onLeaveFeedBack(option)}
+            onClick={() => onLeaveFeedback(option)}
           >
             <div>
               {option} {iconBtn[option]}
