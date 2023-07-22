@@ -26,7 +26,7 @@ export const Statistics = ({
         </p>
       </div>
       <div className={css.positive_container}>
-        <p className={css.statItem}>
+        <p className={css.statItem_positive}>
           Positive Feedback:{' '}
           <span className={css.value}>{positivePercentage}%</span>
         </p>

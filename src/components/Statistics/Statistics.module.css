@@ -19,6 +19,10 @@
 
 .statItem {
   font-size: 18px;
+  color: #fbfbfb;
+}
+.statItem_positive {
+  font-size: 18px;
 }
 
 .value {
